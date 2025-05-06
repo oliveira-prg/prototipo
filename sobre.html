@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre o AcquaVig</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f8fb;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #468a41;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #e9f5ff;
+      border-left: 6px solid #3e883d;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .card h2 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      color: #3e894d;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 15px;
+      }
+
+      .card h2 {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Sobre o sistema AcquaVig</h1>
+
+    <div class="card">
+      <h2>O que é o AcquaVig?</h2>
+      <ul>
+        <li>Sistema web interativo</li>
+        <li>Monitora a qualidade da água dos igarapés de Manaus</li>
+        <li>Exibe o nível de toxidade por bairro</li>
+        <li>Interface simples com mapas, gráficos e alertas</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Tela Inicial</h2>
+      <ul>
+        <li>👤 Login</li>
+        <li>📝 Cadastro</li>
+        <li>👀 Entrar como visitante</li>
+        <li>Permite controle de acesso e escalabilidade</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Modo Claro/Escuro</h2>
+      <ul>
+        <li>Alternância entre modo claro e escuro</li>
+        <li>Botão flutuante no canto superior</li>
+        <li>Preferência salva no navegador (localStorage)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Interface Principal</h2>
+      <ul>
+        <li>Mapa com marcações por bairro</li>
+        <li>Campo para buscar bairro</li>
+        <li>Botão “📍 Localizar” com GPS</li>
+        <li>Gráfico de barras interativo</li>
+        <li>Seção explicativa sobre o funcionamento</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Mapa Interativo</h2>
+      <ul>
+        <li>Utiliza Leaflet.js e OpenStreetMap</li>
+        <li>10 bairros de Manaus</li>
+        <li>Círculos coloridos indicam toxidade:</li>
+        <ul>
+          <li>🟢 1: Baixo</li>
+          <li>🟡 2: Leve</li>
+          <li>🟠 3: Moderado</li>
+          <li>🔴 4: Alto</li>
+          <li>🟣 5: Crítico</li>
+        </ul>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Gráfico de Toxidade</h2>
+      <ul>
+        <li>Comparação clara dos bairros</li>
+        <li>Gerado com Chart.js</li>
+        <li>Atualizado dinamicamente com dados simulados</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Simulação de Sensores</h2>
+      <ul>
+        <li>Simula dados de:</li>
+        <ul>
+          <li>💧 pH</li>
+          <li>🌫️ Turbidez</li>
+          <li>🌡️ Temperatura</li>
+        </ul>
+        <li>Atribuídos manualmente por bairro</li>
+        <li>Preparado para sensores reais ou APIs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Tecnologias Utilizadas</h2>
+      <ul>
+        <li>HTML + CSS + JavaScript</li>
+        <li>Leaflet.js (mapas)</li>
+        <li>Chart.js (gráficos)</li>
+        <li>SweetAlert2 (alertas)</li>
+        <li>FontAwesome (ícones)</li>
+        <li>OpenStreetMap (base cartográfica)</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
