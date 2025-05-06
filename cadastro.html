@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<div id="modalCadastro" class="escondido">
-    <div>
-      <h3>Cadastro</h3>
-      <input type="text" id="nomeCadastro" placeholder="Nome Completo">
-      <input type="email" id="emailCadastro" placeholder="E-mail">
-      <input type="password" id="senhaCadastro" placeholder="Senha">
-      <input type="password" id="confirmarSenhaCadastro" placeholder="Confirmar Senha">
-      <button onclick="realizarCadastro()">Cadastrar</button>
-      <p id="erroCadastro" style="color: red;"></p>
-    </div>
+<div id="modalCadastro" class="modal escondido">
+  <div class="modal-content">
+    <h3>Cadastro</h3>
+    <form id="formCadastro" onsubmit="realizarCadastro(); return false;">
+      <div class="form-group">
+        <label for="nomeCadastro">Nome Completo</label>
+        <input type="text" id="nomeCadastro" placeholder="Nome Completo" required>
+      </div>
+      <div class="form-group">
+        <label for="emailCadastro">E-mail</label>
+        <input type="email" id="emailCadastro" placeholder="E-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="telefoneCadastro">Telefone</label>
+        <input type="tel" id="telefoneCadastro" placeholder="Telefone (opcional)">
+      </div>
+      <div class="form-group">
+        <label for="senhaCadastro">Senha</label>
+        <input type="password" id="senhaCadastro" placeholder="Senha" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmarSenhaCadastro">Confirmar Senha</label>
+        <input type="password" id="confirmarSenhaCadastro" placeholder="Confirmar Senha" required>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="termosCadastro" required>
+          Aceito os <a href="#" target="_blank">termos de uso</a>
+        </label>
+      </div>
+      <button type="submit" class="btn">Cadastrar</button>
+      <p id="erroCadastro" class="erro"></p>
+    </form>
   </div>
+</div>
+
+<style>
+  /* Estilos básicos para responsividade */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"],
+  .form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-group input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+</style>
