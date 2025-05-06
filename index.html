@@ -197,18 +197,10 @@
 
  <!--ABA DE CADASTRO-->
 
-<!DOCTYPE html>
-
-<style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color : #004d40;
-    }
-</style>
-<div id="modalCadastro" class="modal escondido">
-  <div class="modal-content">
+ <div id="telaCadastro" class="escondido">
+  <div>
     <h2>Cadastro</h2>
-    <form id="formCadastro" onsubmit="realizarCadastro(); return false;">
+    <form id="formCadastro" onsubmit="realizarCadastro(event)">
       <div class="form-group">
         <label for="nomeCadastro">Nome Completo</label>
         <input type="text" id="nomeCadastro" placeholder="Nome Completo" required>
@@ -238,80 +230,84 @@
       <button type="submit" class="btn">Cadastrar</button>
       <p id="erroCadastro" class="erro"></p>
     </form>
+    <button onclick="voltarLogin()">Voltar ao Login</button>
   </div>
 </div>
 
 <style>
+  
   /* Estilos básicos para responsividade */
   .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
 
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Garantir que nada ultrapasse os limites */
+}
 
-  .form-group {
-    margin-bottom: 15px;
-  }
+.form-group {
+  margin-bottom: 15px;
+}
 
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="password"],
-  .form-group input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
-  .form-group input[type="checkbox"] {
-    margin-right: 5px;
-  }
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
 
-  .btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #00796b;
-    color: #e0f7fa;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #00796b;
+  color: #e0f7fa;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-  .btn:hover {
-    background-color: #26a69a;
-  }
+.btn:hover {
+  background-color: #26a69a;
+}
 
-  .erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  .modal-content h2 {
+.erro {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.modal-content h2 {
   text-align: center;
 }
 </style>
