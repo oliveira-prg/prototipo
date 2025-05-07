@@ -1,7 +1,73 @@
 <!DOCTYPE html>
-<div id="barraPerfil" class="escondido">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Barra de Perfil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    #barraPerfil {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 12px 12px;
+      width: 100%;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    #barraPerfil span {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .botoes button {
+      padding: 0.5rem 1rem;
+      background-color: #63984b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes button:hover {
+      background-color: #3c8534;
+    }
+
+    .escondido {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="barraPerfil" class="escondido">
     <span>👤 Visitante</span>
     <div class="botoes">
       <button onclick="confirmarSaida()">Sair</button>
     </div>
   </div>
+
+  <script>
+    // Apenas para exibir a barra para teste
+    document.getElementById('barraPerfil').classList.remove('escondido');
+
+    function confirmarSaida() {
+      if (confirm("Deseja realmente sair?")) {
+        alert("Saída confirmada!");
+        // Aqui você pode redirecionar ou limpar dados de sessão, por exemplo
+      }
+    }
+  </script>
+
+</body>
+</html>
