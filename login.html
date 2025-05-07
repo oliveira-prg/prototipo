@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<div id="telaLogin" class="escondido">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #e0f0ff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #telaLogin {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      text-align: center;
+    }
+
+    #telaLogin h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    #telaLogin input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    #telaLogin button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #telaLogin button:hover {
+      background-color: #0056b3;
+    }
+
+    #erroLogin {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .escondido {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="telaLogin" class="escondido">
     <div>
       <h2>Login</h2>
       <input type="text" id="usuario" placeholder="Usuário">
       <input type="password" id="senha" placeholder="Senha">
       <button onclick="fazerLogin()">Entrar</button>
-      <p id="erroLogin" style="color: red;"></p>
+      <p id="erroLogin"></p>
     </div>
   </div>
+
+  <script>
+    // Exemplo de função de login e exibição do formulário
+    document.getElementById('telaLogin').classList.remove('escondido');
+
+    function fazerLogin() {
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+      const erro = document.getElementById('erroLogin');
+
+      if (usuario === 'admin' && senha === '1234') {
+        alert('Login bem-sucedido!');
+        erro.textContent = '';
+      } else {
+        erro.textContent = 'Usuário ou senha incorretos.';
+      }
+    }
+  </script>
+
+</body>
+</html>
